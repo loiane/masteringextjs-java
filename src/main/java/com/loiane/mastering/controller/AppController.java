@@ -25,13 +25,13 @@ public class AppController {
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String adminPage(ModelMap model) {
 		model.addAttribute("user", getPrincipal());
-		return "admin";
+		return "app/admin";
 	}
 
 	@RequestMapping(value = "/db", method = RequestMethod.GET)
 	public String dbaPage(ModelMap model) {
 		model.addAttribute("user", getPrincipal());
-		return "dba";
+		return "app/dba";
 	}
 
 	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class AppController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
-		return "login";
+		return "login/login";
 	}
 
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
@@ -55,7 +55,7 @@ public class AppController {
 	}
 
 	private String getPrincipal(){
-		String userName = null;
+		String userName;
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		if (principal instanceof UserDetails) {
