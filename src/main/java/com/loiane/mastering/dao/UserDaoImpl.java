@@ -1,7 +1,5 @@
 package com.loiane.mastering.dao;
 
-import com.loiane.mastering.dao.AbstractDao;
-import com.loiane.mastering.dao.UserDao;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;

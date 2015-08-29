@@ -12,20 +12,20 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.mastering")
+@ComponentScan(basePackages = "com.loiane.mastering")
 public class AppConfiguration extends WebMvcConfigurerAdapter {
+	
+	@Bean(name="HelloWorld")
+	public ViewResolver viewResolver() {
+		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+		viewResolver.setViewClass(JstlView.class);
+		viewResolver.setPrefix("/WEB-INF/views/");
+		viewResolver.setSuffix(".jsp");
 
-    @Bean(name="AppConfiguration")
-    public ViewResolver viewResolver() {
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setViewClass(JstlView.class);
-        viewResolver.setPrefix("/WEB-INF/views/");
-        viewResolver.setSuffix(".jsp");
+		return viewResolver;
+	}
 
-        return viewResolver;
-    }
-
-    /*
+	/*
      * Configure ResourceHandlers to serve static resources like CSS/ Javascript etc...
      *
      */
