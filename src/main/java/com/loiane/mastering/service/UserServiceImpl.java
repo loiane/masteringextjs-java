@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.loiane.mastering.dao.UserDao;
 import com.loiane.mastering.model.User;
 
+import java.util.List;
+
 @Service("userService")
 @Transactional
 public class UserServiceImpl implements UserService{
@@ -22,4 +24,7 @@ public class UserServiceImpl implements UserService{
 		return dao.findBySSO(sso);
 	}
 
+	public List<User> findAll() {
+		return dao.findAll();
+	}
 }

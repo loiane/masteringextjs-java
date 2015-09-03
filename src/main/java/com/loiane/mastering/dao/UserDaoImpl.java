@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import com.loiane.mastering.model.User;
 
+import java.util.List;
+
 @Repository("userDao")
 public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
@@ -19,5 +21,9 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 		return (User) crit.uniqueResult();
 	}
 
-	
+	public List<User> findAll() {
+		Criteria criteria = createEntityCriteria();
+		return (List<User>) criteria.list();
+	}
+
 }
