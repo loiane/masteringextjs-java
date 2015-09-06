@@ -27,6 +27,9 @@ public class Menu {
     @Column(name="menu_id", nullable=true)
     private Long menuId;
 
+    @Column(name="routeId", nullable=true)
+    private String routeId;
+
     /*@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="menu_id")
     @JsonIgnore
@@ -84,5 +87,13 @@ public class Menu {
 
     public void setMenuId(Long menuId) {
         this.menuId = menuId;
+    }
+
+    public String getRouteId() {
+        return routeId;
+    }
+
+    public void setRouteId(String routeId) {
+        this.routeId = routeId;
     }
 }
